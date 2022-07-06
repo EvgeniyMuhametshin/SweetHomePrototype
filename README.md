@@ -2,8 +2,12 @@
 
 ### Версия Unity 2020.3.27f1
 -----------------------------------------------------
-Прототип игры Sweet Home на игровом движке Unity.
+Sweet Home!!!
 
 https://ru.wikipedia.org/wiki/Sweet_Home
+
+DEAD BY DAYLIGHT!!!
+
+https://ru.wikipedia.org/wiki/Dead_by_Daylight
 
 -----------------------------------------------------
