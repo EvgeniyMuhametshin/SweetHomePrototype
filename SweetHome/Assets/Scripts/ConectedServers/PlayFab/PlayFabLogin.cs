@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class PlayFabLogin : MonoBehaviour
 {
 	/// <summary>
-	/// number id 7E723
+	/// номер id 7E723
 	/// </summary>
 	[SerializeField] private string _enterNumberID;
 	[SerializeField] private InputField _InputField;

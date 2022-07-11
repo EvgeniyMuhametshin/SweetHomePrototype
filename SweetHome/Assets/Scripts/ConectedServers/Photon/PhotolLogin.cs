@@ -24,6 +24,7 @@ public class PhotolLogin : MonoBehaviourPunCallbacks
 		}
 	}
 
+	//TODO Посмотреть метод
 	public void Disconect()
 	{
 		PhotonNetwork.Disconnect();
