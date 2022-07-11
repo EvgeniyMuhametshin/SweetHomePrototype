@@ -4,15 +4,11 @@ using UnityEngine;
 
 public class GlobalBuilder : MonoBehaviour
 {
-    // Start is called before the first frame update
+    GeneratedLevel generatedLevel;
+    
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        generatedLevel = new GeneratedLevel();
+        generatedLevel.Start();
     }
 }
