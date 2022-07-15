@@ -2,6 +2,7 @@ using UnityEngine;
 using PlayFab;
 using PlayFab.ClientModels;
 using UnityEngine.UI;
+using System;
 
 public class PlayFabLogin : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class PlayFabLogin : MonoBehaviour
 	{
 		textId = _InputField.text;
 	}
+
+	private const string AuthGuidKey = "auth_guid";
 
 	public void ConectedServer()
 	{
@@ -37,21 +40,24 @@ public class PlayFabLogin : MonoBehaviour
 			PlayFabSettings.staticSettings.TitleId = textId;
 		}
 
+		var needCreation = PlayerPrefs.HasKey(AuthGuidKey);
+		var id = PlayerPrefs.GetString(AuthGuidKey, 
+			Guid.NewGuid().ToString());
+
 		var request = new LoginWithCustomIDRequest()
 		{
-			CustomId = "Player One",
-			CreateAccount = true,
+			CustomId = id,
+			CreateAccount = !needCreation,
 		};
 
-		PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess,
+		PlayFabClientAPI.LoginWithCustomID(request, 
+			success =>
+			{
+				PlayerPrefs.SetString(AuthGuidKey, id);
+				OnLoginSuccess(success);
+			}, 
 			OnLoginFailure);
 	}
-
-	public void DisconectedServer()
-	{
-
-	}
-
 
 	private void OnLoginSuccess(LoginResult result)
 	{
