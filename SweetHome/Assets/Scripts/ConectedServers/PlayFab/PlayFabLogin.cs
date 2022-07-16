@@ -13,18 +13,18 @@ public class PlayFabLogin : MonoBehaviour
 	[SerializeField] private InputField _InputField;
 	[SerializeField] private Image _imageColor;
 
-	private string textId;
+	private string _textId;
 	
 	public void EnterId()
 	{
-		textId = _InputField.text;
+		_textId = _InputField.text;
 	}
 
 	private const string AuthGuidKey = "auth_guid";
 
 	public void ConectedServer()
 	{
-		if (textId == _enterNumberID)
+		if (_textId == _enterNumberID)
 		{
 			Debug.Log("Соединение с сервером: загружаем");
 			_imageColor.color = Color.green;
@@ -37,7 +37,7 @@ public class PlayFabLogin : MonoBehaviour
 
 		if (string.IsNullOrEmpty(PlayFabSettings.staticSettings.TitleId))
 		{
-			PlayFabSettings.staticSettings.TitleId = textId;
+			PlayFabSettings.staticSettings.TitleId = _textId;
 		}
 
 		var needCreation = PlayerPrefs.HasKey(AuthGuidKey);
