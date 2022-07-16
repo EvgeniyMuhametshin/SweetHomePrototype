@@ -28,7 +28,6 @@ public class EnterInGameWindow : MonoBehaviour
 	{
 		_signInButton.onClick.RemoveAllListeners();
 		_createAccountButton.onClick.RemoveAllListeners();
-
 	}
 
 	private void OpenSignInWindow()

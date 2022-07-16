@@ -16,7 +16,7 @@ public class CreateAccountWindow : AccountDataWindowBase
 	protected override void SubscriptionsElementsUi()
 	{
 		base.SubscriptionsElementsUi();
-		//TODO Переделать в своем коде на подписки ↓↓↓ как тут
+
         _emailField.onValueChanged.AddListener(UpdateEmail);
         _createAccountButton.onClick.AddListener(CreateAccount);
 	}
@@ -36,7 +36,7 @@ public class CreateAccountWindow : AccountDataWindowBase
 		}, result =>
 		{
 			Debug.Log($"Success: {_username}");
-			EnterInGameScene();
+			LoandingScene();
 		}, error =>
 		{
 			Debug.LogError($"Fail: {error.ErrorMessage}");

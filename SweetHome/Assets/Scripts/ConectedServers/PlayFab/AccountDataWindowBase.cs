@@ -24,7 +24,7 @@ public class AccountDataWindowBase : MonoBehaviour
         _passwordField.onValueChanged.AddListener(UpdatePassword);
 	}
 
-	protected void EnterInGameScene()
+	protected void LoandingScene()//EnterInGameScene
 	{
 		SceneManager.LoadScene(1);
 	}

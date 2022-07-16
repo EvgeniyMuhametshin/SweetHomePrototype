@@ -21,10 +21,11 @@ public class SignInWindow : AccountDataWindowBase
 		{
 			Username = _username,
 			Password = _password,
+
 		}, result =>
 		{
 			Debug.Log($"Success: {_username}");
-			EnterInGameScene();
+			LoandingScene();
 		}, error =>
 		{
 			Debug.LogError($"Fail: {error.ErrorMessage}");
