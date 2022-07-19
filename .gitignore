@@ -1,8 +1,6 @@
-/TextMesh Pro/
-/Library/
-/obj/
-/Temp/
-/Material/
-/Items/
-/GlobalInteface/
-/UI/
+SweetHome/[Ll]ibrary/
+SweetHome/[Oo]bj/
+SweetHome/[Tt]emp/
+SweetHome/[Mm]aterial/
+SweetHome/[Ii]tems/
+SweetHome/[Gg]lobalInteface/
