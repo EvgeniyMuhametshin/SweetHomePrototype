@@ -44,14 +44,21 @@ namespace Photon.Pun.Demo.PunBasics
         //True, when the user is firing
         bool IsFiring;
 
-        #endregion
+        private float _id;
 
-        #region MonoBehaviour CallBacks
+        public float Id
+		{
+            get => photonView.ViewID;
+            set => _id = value;
+		}
+		#endregion
 
-        /// <summary>
-        /// MonoBehaviour method called on GameObject by Unity during early initialization phase.
-        /// </summary>
-        public void Awake()
+		#region MonoBehaviour CallBacks
+
+		/// <summary>
+		/// MonoBehaviour method called on GameObject by Unity during early initialization phase.
+		/// </summary>
+		public void Awake()
         {
             if (this.beams == null)
             {
@@ -275,12 +282,14 @@ namespace Photon.Pun.Demo.PunBasics
                 // We own this player: send the others our data
                 stream.SendNext(this.IsFiring);
                 stream.SendNext(this.Health);
+                stream.SendNext(Id);
             }
             else
             {
                 // Network player, receive data
                 this.IsFiring = (bool)stream.ReceiveNext();
                 this.Health = (float)stream.ReceiveNext();
+                Id = (float)stream.ReceiveNext();
             }
         }
 
