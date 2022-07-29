@@ -62,6 +62,7 @@
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
     <Compile Include="Assets\Photon\PhotonLibs\WebSocket\SocketWebTcp.cs" />
+    <Compile Include="Assets\ParrelSync\Examples\CustomArgumentExample.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
     <Compile Include="Assets\Scripts\ConectedServers\LoandingGameSceneWindow.cs" />
     <Compile Include="Assets\Scripts\GlobalBuilder.cs" />
@@ -120,7 +121,7 @@
     <Compile Include="Assets\Scripts\Games\Level\ILevel.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
     <Compile Include="Assets\Scripts\ConectedServers\Photon\PhotolLogin.cs" />
-    <Compile Include="Assets\ParrelSync\Examples\CustomArgumentExample.cs" />
+    <Compile Include="Assets\Scripts\ConectedServers\SlotCharacterWidged.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
@@ -811,6 +812,9 @@
     <Reference Include="Unity.Timeline.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Timeline.Editor.dll</HintPath>
     </Reference>
+    <Reference Include="Unity.DeviceSimulator.Editor">
+      <HintPath>Library\ScriptAssemblies\Unity.DeviceSimulator.Editor.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Mathematics.Editor">
       <HintPath>Library\ScriptAssemblies\Unity.Mathematics.Editor.dll</HintPath>
     </Reference>
@@ -832,9 +836,17 @@
       <Project>{7659C6D6-30A9-77F5-929E-210FD1E20E73}</Project>
       <Name>PhotonChat</Name>
     </ProjectReference>
+    <ProjectReference Include="PlayFabSDKEditor.csproj">
+      <Project>{E8B16077-272E-1E41-CC63-1F69E443104F}</Project>
+      <Name>PlayFabSDKEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="PlayFabEditorExtensions.csproj">
       <Project>{B0C777D1-62BF-430B-4855-C05794EB6CB4}</Project>
       <Name>PlayFabEditorExtensions</Name>
+    </ProjectReference>
+    <ProjectReference Include="PlayFab.csproj">
+      <Project>{F36025A5-6D53-23B9-B1EF-76CD3E29FA4D}</Project>
+      <Name>PlayFab</Name>
     </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Editor.csproj">
       <Project>{0C801702-D173-900A-2247-23BC1FD722B3}</Project>
@@ -860,6 +872,10 @@
       <Project>{F6F52456-C86B-42B5-DFEC-886C40B2E075}</Project>
       <Name>PhotonUnityNetworking</Name>
     </ProjectReference>
+    <ProjectReference Include="ParrelSync.csproj">
+      <Project>{82C23DA9-9DE2-F05E-A85E-69AD00F0DB56}</Project>
+      <Name>ParrelSync</Name>
+    </ProjectReference>
     <ProjectReference Include="PhotonUnityNetworking.Demos.csproj">
       <Project>{BB5BAE95-EBE1-FB8D-BCFB-C9E5A39883D0}</Project>
       <Name>PhotonUnityNetworking.Demos</Name>
@@ -871,18 +887,6 @@
     <ProjectReference Include="PhotonUnityNetworking.Utilities.Culling.Editor.csproj">
       <Project>{F1A02D15-E54E-6B4E-6E36-3BB020E41E8B}</Project>
       <Name>PhotonUnityNetworking.Utilities.Culling.Editor</Name>
-    </ProjectReference>
-    <ProjectReference Include="ParrelSync.csproj">
-      <Project>{82C23DA9-9DE2-F05E-A85E-69AD00F0DB56}</Project>
-      <Name>ParrelSync</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFabSDKEditor.csproj">
-      <Project>{E8B16077-272E-1E41-CC63-1F69E443104F}</Project>
-      <Name>PlayFabSDKEditor</Name>
-    </ProjectReference>
-    <ProjectReference Include="PlayFab.csproj">
-      <Project>{F36025A5-6D53-23B9-B1EF-76CD3E29FA4D}</Project>
-      <Name>PlayFab</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
